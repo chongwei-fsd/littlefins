@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Fin Smart Kids - Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- awesome font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/styles.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark px-md-5 px-3"> <!-- optional: sticky-top -->
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="" width="200px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav"></div>
+        </div>
+    </nav>
+
+    <div class="d-flex justify-content-center fw-bold fs-4 brown-text">MY ACCOUNT</div>
+
+    <!-- body -->
+    <section class="container p-md-0 p-3">
+
+        <div class="row py-3" id="userContainer"></div>
+
+        <!-- rewards/my rewards title tabs -->
+        <div class="row py-3">
+            <div class="col-12 d-flex gap-md-3">
+                <div class="col-md-4 col-6 fs-5 brown-text bg-white p-3 rounded-top-5 text-center fw-bold cursorPointer"
+                    id="rewardsTab">
+                    Rewards
+                </div>
+                <div class="col-md-4 col-6 fs-5 brown-text p-3 rounded-top-5 text-center cursorPointer bg-trans-white"
+                    id="myRewardsTab">
+                    My Rewards
+                </div>
+            </div>
+
+            <!-- Rewards tab -->
+            <div class="col-12" id="rewardsContent">
+                <div class="col-12 bg-white rounded-bottom-5">
+                    <div class="col-12 d-flex p-3">
+                        <div class="col-3 text-center sponsor-heading brown-text">
+                            Sponsors
+                        </div>
+                        <div class="col-3 text-center sponsor-heading brown-text">
+                            Description
+                        </div>
+                        <div class="col-3 text-center sponsor-heading brown-text">
+                            Coins
+                        </div>
+                        <div class="col-3 text-center sponsor-heading brown-text">
+                            Status
+                        </div>
+                    </div>
+
+                    <div class="col-12 px-4">
+                        <hr>
+                    </div>
+
+                    <div id="rewardsContainer"></div>
+                </div>
+            </div>
+
+            <!-- My Rewards tab -->
+            <div class="col-12 d-none" id="myRewardsContent">
+                <div class="col-12 bg-white rounded-bottom-5">
+                    <div class="col-12 d-flex p-3">
+                        <div class="col-3 text-center sponsor-heading brown-text">
+                            Voucher
+                        </div>
+                        <div class="col-3 text-center sponsor-heading brown-text">
+                            Description
+                        </div>
+                        <div class="col-3 text-center sponsor-heading brown-text">
+                            Expiry Date
+                        </div>
+                        <div class="col-3 text-center sponsor-heading brown-text">
+                            Status
+                        </div>
+                    </div>
+
+                    <div class="col-12 px-4">
+                        <hr>
+                    </div>
+
+                    <div id="redeemedContainer"></div>
+                </div>
+            </div>
+
+        </div> <!-- end row -->
+    </section>
+
+    <!-- modal -->
+    <div class="modal fade" id="profileRedeemModalContent" aria-hidden="true" data-bs-backdrop="static"
+        data-bs-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="brown-text fw-bold fs-3">Your voucher is on the way!
+                    </h4>
+                    <p class="fw-light fs-3 orange-text">Check your email for voucher code and instructions on how to
+                        redeem.</p>
+                    <div class="justify-content-center py-3">
+                        <img src="images/emailredeem.png" alt="" width="150px" class="py-3">
+                        <div>
+                            <a href="#" class="text-decoration-none px-3 py-2 rounded-5 modalBtn fw-bold"
+                                id="viewMyRewards" data-bs-dismiss="modal">View My Rewards</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- External Custom Script -->
+    <script src="script/Mock.js"></script> <!-- TODO: to remove in production env. -->
+    <script src="script/const.js"></script>
+
+    <script src="script/auth.js"></script>
+
+    <script src="script/components/UserController.js"></script>
+    <script src="script/components/VoucherController.js"></script>
+    <script src="script/components/RedeemedController.js"></script>
+    <script src="script/profile-loader.js"></script>
+    <script src="script/profile.js"></script>
+
+    <script src="script/components/NavController.js"></script>
+    <script src="script/components/Spinner.js"></script>
+    <script src="script/loader.js"></script>
+
+    <script src="script/boostrap-ftns.js"></script>
+    <script src="script/form-validate.js"></script>
+    <script src="script/components/Token.js"></script>
+
+
+
+</body>
+
+</html>
