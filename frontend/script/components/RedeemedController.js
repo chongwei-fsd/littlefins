@@ -11,6 +11,7 @@ class RedeemedController {
         });
     }
 
+
     addRedeemedVoucher(voucher){
         const div1=document.createElement("div")
         div1.className="col-12 d-flex p-3 align-items-center"
