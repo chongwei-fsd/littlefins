@@ -42,6 +42,7 @@ public class RedeemedService implements RedeemedServiceInterface {
         return redeemedRepo.save(redeemed);
     }
 
+    //custom
     @Override
     public List<Redeemed> findByUserId(Long userId) {
         return redeemedRepo.findByUserId(userId);

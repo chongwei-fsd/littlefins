@@ -12,5 +12,7 @@ public interface RedeemedServiceInterface {
     public abstract Redeemed update(Redeemed redeemed);
     public abstract void deleteById(Long id);
     public abstract long count();
+
+    //custom
     public abstract List<Redeemed> findByUserId(Long userId);
 }

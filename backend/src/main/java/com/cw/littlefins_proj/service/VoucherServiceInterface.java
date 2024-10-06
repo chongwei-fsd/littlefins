@@ -12,4 +12,7 @@ public interface VoucherServiceInterface {
     public abstract Voucher update(Voucher voucher);
     public abstract void deleteById(Long id);
     public abstract long count();
+
+    //custom
+    public abstract List<Voucher>getAvailableVouchers();
 }

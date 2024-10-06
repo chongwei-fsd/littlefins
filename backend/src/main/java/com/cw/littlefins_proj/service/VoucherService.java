@@ -41,4 +41,11 @@ public class VoucherService implements VoucherServiceInterface {
     public long count() {
         return voucherRepo.count();
     }
+
+    //custom
+    @Override
+    public List<Voucher> getAvailableVouchers() {
+        return voucherRepo.findAllAvailableVouchers();
+    }
+
 }
