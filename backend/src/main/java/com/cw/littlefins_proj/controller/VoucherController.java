@@ -1,12 +1,15 @@
 package com.cw.littlefins_proj.controller;
 
+import com.cw.littlefins_proj.model.Redeemed;
 import com.cw.littlefins_proj.model.Voucher;
+import com.cw.littlefins_proj.service.RedeemedService;
 import com.cw.littlefins_proj.service.VoucherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -16,10 +19,20 @@ public class VoucherController {
     @Autowired
     VoucherService voucherService;
 
+    @Autowired
+    RedeemedService redeemedService;
+
+    //get available vouchers (haven't redeemed by user)
     @GetMapping
-    public ResponseEntity<Object> allVouchers() {
-        return new ResponseEntity<>(voucherService.findAll(), HttpStatus.OK);
+    public ResponseEntity<Object> allAvailableVouchers() {
+        List<Voucher> availableVouchers = voucherService.getAvailableVouchers();
+        return new ResponseEntity<>(availableVouchers,HttpStatus.OK);
     }
+
+//    @GetMapping
+//    public ResponseEntity<Object> allVouchers() {
+//        return new ResponseEntity<>(voucherService.findAll(), HttpStatus.OK);
+//    }
 
     @PostMapping
     public ResponseEntity<Object> saveVoucher(@RequestBody Voucher voucher) {
