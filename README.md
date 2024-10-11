@@ -31,3 +31,11 @@
 <li>Unit testing &#10060;</li>
 <li>Change User.java to Users.java, and update all project files that contains "User", will it affect the DB? &#10060;</li>
 
+<hr>
+
+<h2>Postman</h2>
+<li><b>POST Sign up</b> localhost:8080/auth/api/signup (username, email, password, role) </li>
+<li><b>POST Sign in</b> localhost:8080/auth/api/signin (email, password) </li>
+<li><b>GET Get available vouchers</b> localhost:8080/user/api/voucher </li>
+<li><b>GET Get user profile</b> localhost:8080/user/view </li>
+<li><b>POST Redeem voucher</b> localhost:8080/user/api/voucher/redeem/{voucherId} </li>
