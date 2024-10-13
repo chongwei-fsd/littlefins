@@ -32,8 +32,11 @@
 <hr>
 
 <h2>Postman</h2>
-<li><b>POST Sign up</b> localhost:8080/auth/api/signup (username, email, password, role) </li>
-<li><b>POST Sign in</b> localhost:8080/auth/api/signin (email, password) </li>
-<li><b>GET Get available vouchers</b> localhost:8080/user/api/voucher </li>
-<li><b>GET Get user profile</b> localhost:8080/user/view </li>
-<li><b>POST Redeem voucher</b> localhost:8080/user/api/voucher/redeem/{voucherId} </li>
+<li><b>POST Sign up</b> localhost:8080/auth/api/signup</li>
+<li><b>POST Sign in</b> localhost:8080/auth/api/signin</li>
+<li><b>GET Get available vouchers</b> localhost:8080/user/api/voucher</li>
+<li><b>GET Get user profile</b> localhost:8080/user/view</li>
+<li><b>POST Redeem voucher</b> localhost:8080/user/api/voucher/redeem</li>
+<li><b>GET Get redeemed vouchers</b> localhost:8080/user/api/voucher/redeem</li>
+<li><b>POST User updates coin</b> localhost:8080/user/updatecoin</li>
+<li><b>POST User uses voucher</b> localhost:8080/user/api/voucher/redeem/use</li>
