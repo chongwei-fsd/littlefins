@@ -7,7 +7,7 @@
 <li>API POST when the user clicks on "Redeem", get the voucher Id pass into param (Store userId, voucherId into Redeemed table) &#9989;</li>
 <li>API POST when the user clicks on "Use now", get the voucher Id pass into param (Set used to true, set date to current date, decrease coin amount) &#9989;</li>
 <li>UI design - Create pop up modal for barcode when user clicks use now button &#10060;</li>
-<li>API GET - when the user clicks on "Use now", get the voucher img, desc, exp date, ramdom digit &#10060;</li>
+<li>API GET - when the user clicks on "Use now", get the voucher img, desc, exp date, ramdom digit display on barcode &#10060;</li>
 
 <hr>
 
