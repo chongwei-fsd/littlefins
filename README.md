@@ -1,13 +1,13 @@
 <h2>Frond end</h2>
-<li>Fetch API POST when user sign up &#9989;</li>
-<li>Fetch API POST when user login, set token into localstorage &#9989;</li>
-<li>Fetch API GET for user details, display on profile section (name, email, coin) &#9989;</li>
-<li>Fetch API GET for all not redeemed vouchers, display on Rewards section &#9989;</li>
-<li>Fetch API GET for the user's redeemed vouchers, display on My Rewards section &#9989;</li>
-<li>Fetch API POST when the user clicks on "Redeem", get the voucher Id pass into param (Store userId, voucherId into Redeemed table) &#9989;</li>
-<li>Fetch API POST when the user clicks on "Use now", get the voucher Id pass into param (Set used to true, set date to current date, decrease coin amount) &#9989;</li>
-<li>How to display barcode?? &#10060;</li>
-<li>How to increase user coin when the game end? &#10060;</li>
+<li>API POST when user sign up &#9989;</li>
+<li>API POST when user login, set token into localstorage &#9989;</li>
+<li>API GET for user details, display on profile section (name, email, coin) &#9989;</li>
+<li>API GET for all not redeemed vouchers, display on Rewards section &#9989;</li>
+<li>API GET for the user's redeemed vouchers, display on My Rewards section &#9989;</li>
+<li>API POST when the user clicks on "Redeem", get the voucher Id pass into param (Store userId, voucherId into Redeemed table) &#9989;</li>
+<li>API POST when the user clicks on "Use now", get the voucher Id pass into param (Set used to true, set date to current date, decrease coin amount) &#9989;</li>
+<li>UI design - Create pop up modal for barcode when user clicks use now button &#10060;</li>
+<li>API GET - when the user clicks on "Use now", get the voucher img, desc, exp date, ramdom digit &#10060;</li>
 
 <hr>
 
