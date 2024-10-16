@@ -32,11 +32,11 @@
 <hr>
 
 <h2>Postman</h2>
-<li><b>1. POST Sign up</b> localhost:8080/auth/api/signup <mark>(inputs: email, username, password, dob)</mark></li>
-<li><b>2. POST Sign in</b> localhost:8080/auth/api/signin <mark>(input: email, password)</mark></li>
-<li><b>3. GET Get available vouchers</b> localhost:8080/user/api/voucher <mark>(output: id, image, description, value, expDate)</mark></li>
-<li><b>4. GET Get user profile</b> localhost:8080/user/view <mark>(output: username, email, password, coin)</mark></li>
-<li><b>5. POST Redeem voucher</b> localhost:8080/user/api/voucher/redeem <mark>(input: param voucher id)</mark></li>
-<li><b>6. GET Get redeemed vouchers</b> localhost:8080/user/api/voucher/redeem <mark>(output: id, image, description, value, expDate)</mark></li>
-<li><b>7. POST User updates coin</b> localhost:8080/user/updatecoin <mark>(input: coin: value)</mark></li>
-<li><b>8. POST User uses voucher</b> localhost:8080/user/api/voucher/redeem/use <mark>(input: param voucher id)</mark></li>
+<li><b>1. POST Sign up</b> localhost:8080/auth/api/signup <mark>(body inputs: email, username, password, dob) (return: message, user object)</mark></li>
+<li><b>2. POST Sign in</b> localhost:8080/auth/api/signin <mark>(body input: email, password) (return: message, token, refreshToken, expirationTime)</mark></li>
+<li><b>3. GET Get available vouchers</b> localhost:8080/user/api/voucher <mark>(header input: token) (return: id, image, description, value, expDate)</mark></li>
+<li><b>4. GET Get user profile</b> localhost:8080/user/view <mark>(header input: token) (return: username, email, password, coin)</mark></li>
+<li><b>5. POST Redeem voucher</b> localhost:8080/user/api/voucher/redeem <mark>(header input: token) (param input: id) (return: message, username, email, role, coin, voucher object)</mark></li>
+<li><b>6. GET Get redeemed vouchers</b> localhost:8080/user/api/voucher/redeem <mark>(header input: token) (return: id, user object, voucher object)</mark></li>
+<li><b>7. POST User updates coin</b> localhost:8080/user/updatecoin <mark>(header input: token) (body input: coin) (return: message, user object)</mark></li>
+<li><b>8. POST User uses voucher</b> localhost:8080/user/api/voucher/redeem/use <mark>(header input: token) (param input: id) (return: voucher object, randomNum, dateUsed)</mark></li>
