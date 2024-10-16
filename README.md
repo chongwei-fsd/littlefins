@@ -32,11 +32,11 @@
 <hr>
 
 <h2>Postman</h2>
-<li><b>POST Sign up</b> localhost:8080/auth/api/signup <mark>(inputs: email, username, password, dob)</mark></li>
-<li><b>POST Sign in</b> localhost:8080/auth/api/signin <mark>(input: email, password)</mark></li>
-<li><b>GET Get available vouchers</b> localhost:8080/user/api/voucher <mark>(output: id, image, description, value, expDate)</mark></li>
-<li><b>GET Get user profile</b> localhost:8080/user/view <mark>(output: username, email, password, coin)</mark></li>
-<li><b>POST Redeem voucher</b> localhost:8080/user/api/voucher/redeem <mark>(input: param voucher id)</mark></li>
-<li><b>GET Get redeemed vouchers</b> localhost:8080/user/api/voucher/redeem <mark>(output: id, image, description, value, expDate)</mark></li>
-<li><b>POST User updates coin</b> localhost:8080/user/updatecoin <mark>(input: coin: value)</mark></li>
-<li><b>POST User uses voucher</b> localhost:8080/user/api/voucher/redeem/use <mark>(input: param voucher id)</mark></li>
+<li><b>1. POST Sign up</b> localhost:8080/auth/api/signup <mark>(inputs: email, username, password, dob)</mark></li>
+<li><b>2. POST Sign in</b> localhost:8080/auth/api/signin <mark>(input: email, password)</mark></li>
+<li><b>3. GET Get available vouchers</b> localhost:8080/user/api/voucher <mark>(output: id, image, description, value, expDate)</mark></li>
+<li><b>4. GET Get user profile</b> localhost:8080/user/view <mark>(output: username, email, password, coin)</mark></li>
+<li><b>5. POST Redeem voucher</b> localhost:8080/user/api/voucher/redeem <mark>(input: param voucher id)</mark></li>
+<li><b>6. GET Get redeemed vouchers</b> localhost:8080/user/api/voucher/redeem <mark>(output: id, image, description, value, expDate)</mark></li>
+<li><b>7. POST User updates coin</b> localhost:8080/user/updatecoin <mark>(input: coin: value)</mark></li>
+<li><b>8. POST User uses voucher</b> localhost:8080/user/api/voucher/redeem/use <mark>(input: param voucher id)</mark></li>
