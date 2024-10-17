@@ -17,6 +17,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 
 @Service
@@ -41,6 +43,8 @@ public class AuthService {
 
         user.setEmail(registrationRequest.getEmail());
 
+        user.setCoin(registrationRequest.getCoin());
+
         if(registrationRequest.getPassword().isBlank())
             throw new PasswordBlankException();
 
@@ -64,6 +68,12 @@ public class AuthService {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(signinRequest.getEmail(),signinRequest.getPassword()));
 
         var user = userRepository.findByEmail(signinRequest.getEmail());
+
+        var gameCoin=signinRequest.getCoin();
+
+        user.setCoin(user.getCoin()+gameCoin);
+
+        userRepository.save(user);
 
         var jwt = jwtUtils.generateToken(user);
 
