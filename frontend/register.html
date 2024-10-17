@@ -209,9 +209,12 @@
             spinner.createSpinner("btnLogin");
             spinner.displaySpinner(true);
 
-            const formData = { username:username.value, email: email.value, password: pwd.value, dob: dob.value, role:"USER" };          
+            const storedBalance = localStorage.getItem('balance3');
+            const coinBalance=parseFloat(storedBalance)
 
-            // console.log(formData)
+            const formData = { name:username.value, email: email.value, password: pwd.value, dob: dob.value, role:"USER", coin:coinBalance?coinBalance:0 };          
+
+            console.log(formData)
 
             const loginSuccess = await signup(formData);
             if (!loginSuccess) {
