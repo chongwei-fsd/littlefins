@@ -20,7 +20,7 @@ if (authUser) {
     document.getElementById('gameCoin').innerText = balance; //pass the value into modal display
     authUserModal(); //auth user modal
     document.getElementById('viewCoinBalance').addEventListener('click',function(){
-        updateUserGameCoin(); 
+         updateUserGameCoin(); 
     })
 }
 else {
@@ -47,12 +47,40 @@ function notAuthUserModal() {
     setTimeout(function () {
         const modal = new bootstrap.Modal(document.getElementById('notAuthUserModal'));
         modal.show();
-    }, 3000);
+    }, 3500);
 }
 
 function authUserModal() {
     setTimeout(function () {
         const modal = new bootstrap.Modal(document.getElementById('authUserModal'));
         modal.show();
-    }, 3000);
+    }, 3500);
 }
+
+async function updateUserGameCoin() {
+    const coin = localStorage.getItem("balance3");
+    const requestData = { coin };
+    const token = localStorage.getItem(_USERTOKEN);
+
+    try {
+        const response = await fetch(`http://localhost:8080/user/updatecoin`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`, // Include token in Authorization header
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestData)
+        });
+        if (response.ok) {
+            // const data = await response.json();
+            window.location = _PROFILE_URL;
+            //refresh
+            window.location.href.split('?')[0];
+        }
+        return;
+
+    } catch (error) {
+        console.error('Error adding voucher:', error);
+    }
+}
+
