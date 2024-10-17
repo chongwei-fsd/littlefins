@@ -1,5 +1,5 @@
 <h2>Frond end</h2>
-<li>User end game at congra page, click sign in/signup, pass the balance coin to his account &#10060;</li>
+<li>User end game at congra page, click sign in/signup, pass the balance coin to his account &#9989;</li>
 <li>Static pages (about, parents, partners) &#10060;</li>
 <li>Once user redeems the voucher, send an email &#10060;</li>
 <li>Game pages' title &#10060;</li>
