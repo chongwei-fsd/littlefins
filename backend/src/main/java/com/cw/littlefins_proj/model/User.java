@@ -43,7 +43,7 @@ public class User implements UserDetails {
     private Long coin=0L;
 
     @Column
-    private LocalDateTime dob;
+    private LocalDate dob;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
