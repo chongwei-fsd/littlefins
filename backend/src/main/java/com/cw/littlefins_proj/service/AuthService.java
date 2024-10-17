@@ -45,6 +45,8 @@ public class AuthService {
 
         user.setCoin(registrationRequest.getCoin());
 
+        user.setDob(registrationRequest.getDob());
+
         if(registrationRequest.getPassword().isBlank())
             throw new PasswordBlankException();
 
