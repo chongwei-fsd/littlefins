@@ -133,12 +133,12 @@
             event.preventDefault();                                                 // Prevent default browser events from happening
 
             const email = document.getElementById("txtEmail");                      // Create constant variables to capture form inputs - txtEmail
-            const msg = document.getElementById("txtPassword");                     // Create constant variables to capture form inputs - txtPassword
+            const pwd = document.getElementById("txtPassword");                     // Create constant variables to capture form inputs - txtPassword
 
             const toastElement = document.getElementById("msg-toast");              // Get the toast element - msg-toast
             const toastBodyElement = document.getElementById("msg-toast-body");     // Get the toast element - msg-toast-body
 
-            if (isEmpty(email.value) || isEmpty(msg.value)) {                         // Trap empty inputs for txtEmail and txtPassword - isEmpty()
+            if (isEmpty(email.value) || isEmpty(pwd.value)) {                         // Trap empty inputs for txtEmail and txtPassword - isEmpty()
                 showToast({
                     toastElement,
                     toastBodyElement,
@@ -160,8 +160,11 @@
 
             spinner.createSpinner("btnLogin");
             spinner.displaySpinner(true);
+
+            const storedBalance = localStorage.getItem('balance3');
+            const coinBalance=parseFloat(storedBalance)
             
-            const formData = { email: email.value, password: msg.value };           // JavaScript Object formData stores the form's input values
+            const formData = { email: email.value, password: pwd.value,coin:coinBalance?coinBalance:0 };           // JavaScript Object formData stores the form's input values
 
             const loginSuccess = await login(formData);
             if (!loginSuccess) {
