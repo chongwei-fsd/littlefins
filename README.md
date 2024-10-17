@@ -1,9 +1,9 @@
 <h2>Frond end</h2>
 <li>User end game at congra page, click sign in/signup, pass the balance coin to his account &#10060;</li>
 <li>Static pages (about, parents, partners) &#10060;</li>
-<li>admin page (CRUD) &#10060;</li>
 <li>Once user redeems the voucher, send an email &#10060;</li>
 <li>Game pages' title &#10060;</li>
+<li>admin page (CRUD) (wishlist) &#10060;</li>
 <li>API POST when user sign up &#9989;</li>
 <li>API POST when user login, set token into localstorage &#9989;</li>
 <li>API GET for user details, display on profile section (name, email, coin) &#9989;</li>
