@@ -14,14 +14,13 @@ document.getElementById('myRewardsTab').addEventListener('click', myRewardsClick
 document.getElementById('rewardsTab').addEventListener('click', rewardsClick);
 
 async function showUserProfile() {
-    // const userContainer = document.getElementById(userContainerName);
     const token = localStorage.getItem(_USERTOKEN);
 
     try {
         const response = await fetch(`http://localhost:8080/user/view`, {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${token}`, // Include token in Authorization header
+                'Authorization': `Bearer ${token}`, 
                 'Content-Type': 'application/json',
             },
         });
@@ -38,14 +37,13 @@ async function showUserProfile() {
 
 
 async function showVouchers() {
-    // const rewardsContainer = document.getElementById(rewardsContainerName);
     const token = localStorage.getItem(_USERTOKEN);
 
     try {
         const response = await fetch(`http://localhost:8080/user/api/voucher`, {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${token}`, // Include token in Authorization header
+                'Authorization': `Bearer ${token}`, 
                 'Content-Type': 'application/json',
             },
         });
@@ -71,7 +69,7 @@ async function redeemVoucher(voucherId, redeemBtn) {
         const response = await fetch(`http://localhost:8080/user/api/voucher/redeem/${voucherId}`, {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${token}`, // Include token in Authorization header
+                'Authorization': `Bearer ${token}`, 
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(requestData)
@@ -102,56 +100,29 @@ async function redeemVoucher(voucherId, redeemBtn) {
 }
 
 
-async function updateUserGameCoin() {
-    const coin = localStorage.getItem("balance3");
-    const requestData = { coin };
-    const token = localStorage.getItem(_USERTOKEN);
-
-    try {
-        const response = await fetch(`http://localhost:8080/user/updatecoin`, {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${token}`, // Include token in Authorization header
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(requestData)
-        });
-        if(response.ok){
-            // const data = await response.json();
-            window.location = _PROFILE_URL;
-            //refresh
-            window.location.href.split('?')[0];                             
-        }
-        return;
-
-    } catch (error) {
-        console.error('Error adding voucher:', error);
-    }
-}
-
-
 async function showRedeemedVouchers() {
-    // const redeemedContainer = document.getElementById(redeemedContainerName);
     const token = localStorage.getItem(_USERTOKEN);
-
     try {
         const response = await fetch(`http://localhost:8080/user/api/voucher/redeem`, {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${token}`, // Include token in Authorization header
+                'Authorization': `Bearer ${token}`, 
                 'Content-Type': 'application/json',
             },
         });
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            return
+
         }
         const data = await response.json();
         const redeemedController = new RedeemedController(redeemedContainerName);
         redeemedController.displayRedeemedVouchers(data);
+        return
     } catch (error) {
         console.error('Error fetching redeemed vouchers:', error);
     }
 }
+
 
 
 async function useNowBarcode(voucherId) {
@@ -162,7 +133,7 @@ async function useNowBarcode(voucherId) {
         const response = await fetch(`http://localhost:8080/user/api/voucher/redeem/use/${voucherId}`, {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${token}`, // Include token in Authorization header
+                'Authorization': `Bearer ${token}`, 
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(requestData)
@@ -188,7 +159,7 @@ async function useNowBarcode(voucherId) {
     }
 }
 
-document.getElementById('formUpdateUser').addEventListener('submit', async (e)=> {
+document.getElementById('formUpdateUser').addEventListener('submit', async (e) => {
     e.preventDefault();
     const name = document.getElementById('updateName').value;
     const email = document.getElementById('updateEmail').value;
@@ -198,7 +169,7 @@ document.getElementById('formUpdateUser').addEventListener('submit', async (e)=>
 
 });
 
-async function updateUserProfile(formData={}) {
+async function updateUserProfile(formData = {}) {
     if (Object.entries(formData).length === 0) return;
 
     const token = localStorage.getItem(_USERTOKEN);
@@ -207,23 +178,23 @@ async function updateUserProfile(formData={}) {
         const response = await fetch(`http://localhost:8080/user/updateprofile`, {
             method: 'PUT',
             headers: {
-                'Authorization': `Bearer ${token}`, // Include token in Authorization header
+                'Authorization': `Bearer ${token}`, 
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(formData)
         });
-        if(response.ok){
+        if (response.ok) {
             const data = await response.json();
             console.log(data);
-    
+
             const newToken = data.token;
-            window.localStorage.removeItem(_USERTOKEN)                                    
-            window.localStorage.setItem(_USERTOKEN, newToken)
+            window.localStorage.removeItem(_USERTOKEN);
+            window.localStorage.setItem(_USERTOKEN, newToken);
 
             //refresh page
-            const path = window.location.href.split('?')[0];                             
-            const url = path + "?updated=true";                                             
-            window.location = url;  
+            const path = window.location.href.split('?')[0];
+            const url = path + "?updated=true";
+            window.location = url;
         }
         return;
     } catch (error) {
@@ -254,28 +225,3 @@ function myRewardsClick() {
     rewardsTab.classList.remove('bg-white', 'fw-bold');
     rewardsTab.classList.add('bg-trans-white');
 }
-
-
-
-
-
-// const data = await response.json();
-
-// // delete the click voucher
-// redeemBtn.closest('div.col-12').remove();
-
-// // modal pop up
-// const modalElement = document.getElementById('profileRedeemModalContent');
-// const modal = new bootstrap.Modal(modalElement);
-// modal.show();
-
-// // update profile coin
-// showUserProfile();
-// // switch to my rewards tab
-// myRewardsClick();
-// const redeemedController = new RedeemedController(redeemedContainerName);
-// redeemedController.displayRedeemedVouchers([data]);
-
-// } catch (error) {
-// console.error('Error adding voucher:', error);
-// }
