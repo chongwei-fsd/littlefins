@@ -55,7 +55,7 @@
             <!-- main page text -->
             <div class="d-flex flex-column col-md-6">
 
-                <div class="mainpagetext d-flex row col-sm rounded-5 align-content-md-center my-auto p-4">
+                <div class="rounded-5 p-md-5 p-4 home-light-yellow-bg d-md-flex flex-md-column border border-3 border-white">
                     <!-- Container for Login form -->
                     <div class="container-sm">
 
@@ -63,7 +63,7 @@
                             <h1 class="display-4 text-black fw-bold text-center">Sign Up</h1>
                         </div>
 
-                        <form id="formLogin" class="needs-validation" novalidate>
+                        <form id="formRegister" class="needs-validation" novalidate>
                             <!-- Email input -->
                             <div class="row justify-content-center">
                                 <div class="col-8">
@@ -98,7 +98,7 @@
                                                 for="txtPassword">Password:</label>
                                             <input type="password" id="txtPassword" class="form-control" required />
                                             <div class="invalid-feedback text-white">
-                                                Please enter a password.
+                                                Password is invalid.
                                             </div>
 
                                         </div>
@@ -108,7 +108,7 @@
                                                 your password:</label>
                                             <input type="password" id="txtcPassword" class="form-control" required />
                                             <div class="invalid-feedback text-white">
-                                                Please confirm your password.
+                                                Comfirm password is invalid.
                                             </div>
 
                                         </div>
@@ -159,7 +159,7 @@
     <!-- Internal Custom Script -->
     <script>
         // Custom JS statements and function
-        document.getElementById("formLogin").addEventListener("submit", async (event) => {
+        document.getElementById("formRegister").addEventListener("submit", async (event) => {
             event.preventDefault();                                                 
 
             const email = document.getElementById("txtEmail");                      
@@ -169,13 +169,17 @@
             const dob = document.getElementById("birthday");
             const toastElement = document.getElementById("msg-toast");             
             const toastBodyElement = document.getElementById("msg-toast-body");  
-
+            const formReg = document.getElementById("formRegister");
+            
             if (isEmpty(email.value) || isEmpty(pwd.value) || isEmpty(pwd2)) {                         
                 showToast({
                     toastElement,
                     toastBodyElement,
                     bgColor: "danger", msg: "All inputs must not be empty."
                 });
+                
+               
+
                 return;
             }
 
@@ -185,6 +189,7 @@
                     toastBodyElement,
                     bgColor: "danger", msg: "Email is invalid."
                 });
+                
                 return;
             }
 
@@ -192,9 +197,12 @@
                 showToast({
                     toastElement,
                     toastBodyElement,
-                    bgColor: "danger", msg: "Min 8 Characters, 1 Uppercase, 1 Lower case and 1 Special character"
+                    bgColor: "danger", msg: "Minimum 8 characters, 1 uppercase, 1 lower case and 1 special character"
                 });
+                pwd.setCustomValidity("Passwords do not meet requirements.");
                 return;
+            }else{
+                pwd.setCustomValidity("");
             }
 
             if (pwd.value != pwd2.value) {                                              
@@ -203,8 +211,14 @@
                     toastBodyElement,
                     bgColor: "danger", msg: "Passwords do not match"
                 });
+                pwd2.setCustomValidity("Passwords do not meet requirements.");
                 return;
+            }else{
+                pwd2.setCustomValidity("");
             }
+
+            formReg.classList.remove("was-validated"); //clear the form of any validation icons/feedback
+
 
             spinner.createSpinner("btnLogin");
             spinner.displaySpinner(true);
