@@ -189,8 +189,12 @@
                     toastBodyElement,
                     bgColor: "danger", msg: "Email is invalid."
                 });
-                
+                email.setCustomValidity("Passwords do not meet requirements.");
+                pwd.setCustomValidity("Passwords do not meet requirements.");
+                pwd2.setCustomValidity("Passwords do not meet requirements.");
                 return;
+            }else{
+                pwd.setCustomValidity("");
             }
 
             if (!isPassword(pwd.value)) {                                              
@@ -200,6 +204,7 @@
                     bgColor: "danger", msg: "Minimum 8 characters, 1 uppercase, 1 lower case and 1 special character"
                 });
                 pwd.setCustomValidity("Passwords do not meet requirements.");
+                pwd2.setCustomValidity("Passwords do not meet requirements.");
                 return;
             }else{
                 pwd.setCustomValidity("");
@@ -211,6 +216,7 @@
                     toastBodyElement,
                     bgColor: "danger", msg: "Passwords do not match"
                 });
+                pwd.setCustomValidity("Passwords do not meet requirements.");
                 pwd2.setCustomValidity("Passwords do not meet requirements.");
                 return;
             }else{

@@ -86,7 +86,7 @@
                                     <label class="form-label text-black fw-lighter" for="txtPassword">Password:</label>
                                     <input type="password" id="txtPassword" class="form-control" required />
                                     <div class="invalid-feedback text-white">
-                                        Please enter a password.
+                                        Invalid password.
                                     </div>
                                     <a href="register.html"> Don't have an account? Sign up here.</a>
                                 </div>
@@ -145,18 +145,39 @@
                     bgColor: "danger",
                     msg: "All inputs must not be empty."
                 });
+                
                 return;
             }
 
-            if (!isEmail(email.value)) {                                              // Trap invalid email for txtEmail - isEmail()
+             if (!isEmail(email.value)) {                                              // Trap invalid email for txtEmail - isEmail()
                 showToast({
                     toastElement,
                     toastBodyElement,
                     bgColor: "danger",
-                    msg: "Email is invalid."
+                    msg: "Invalid Email."
                 });
+                email.setCustomValidity("invalid email");
+                pwd.setCustomValidity("Passwords do not meet requirements.");
                 return;
+            }else{
+                email.setCustomValidity("");
             }
+
+
+            if (!isPassword(pwd.value)) {                                              
+                showToast({
+                    toastElement,
+                    toastBodyElement,
+                    bgColor: "danger", msg: "Invalid Password."
+                });
+                pwd.setCustomValidity("Passwords do not meet requirements.");
+                return;
+            }else{
+                pwd.setCustomValidity("");
+            }
+
+
+
 
             spinner.createSpinner("btnLogin");
             spinner.displaySpinner(true);
