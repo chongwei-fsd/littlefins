@@ -1,4 +1,4 @@
-<h2>Deploy to Railway? AWS? &#10060;</h2>
+<h2>Deploy to Railway? Heroku? AWS? &#10060;</h2>
 <h2>Frond end</h2>
 <li>Static pages (about, parents, partners) &#10060;</li>
 <li>Once user redeems the voucher, send an email &#10060;</li>
