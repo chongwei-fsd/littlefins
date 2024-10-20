@@ -47,7 +47,7 @@
 <li><b>8. POST User uses voucher</b> localhost:8080/user/api/voucher/redeem/use <mark>(header input: token) (param input: id) (return: voucher object, randomNum, dateUsed)</mark></li>
 <h2>Postman (admin)</h2>
 <li><b>9. GET Get all vouchers</b> localhost:8080/admin/vouchers</li>
-<li><b>9. GET Get voucher by id</b> localhost:8080/admin/voucher/</li>
-<li><b>9. POST Add voucher</b> localhost:8080/admin/voucher</li>
-<li><b>9. PUT Update voucher by id</b> localhost:8080/admin/voucher</li>
-<li><b>9. DELETE delete voucher by id</b> localhost:8080/admin/voucher</li>
+<li><b>10. GET Get voucher by id</b> localhost:8080/admin/voucher/</li>
+<li><b>11. POST Add voucher</b> localhost:8080/admin/voucher</li>
+<li><b>12. PUT Update voucher by id</b> localhost:8080/admin/voucher</li>
+<li><b>13. DELETE delete voucher by id</b> localhost:8080/admin/voucher</li>
