@@ -32,7 +32,7 @@
 
 <li>Get the barcode random generate digit, voucher image, voucher desc, exp date &#9989;</li>
 <li>Unit testing for user, vouchers, redemption &#9989;</li>
-<li>Change User.java to Users.java, and update all project files that contains "User", will it affect the DB? &#10060;</li>
+<li>Unit testing for admin (chong wei will do) &#10060;</li>
 
 <hr>
 
