@@ -3,11 +3,19 @@ class AdminController{
         this.container = document.getElementById(element);
     }
 
+    // displayVouchers(data) {
+    //     // console.log(data)
+    //     this.container.innerHTML = ''; // Clear previous vouchers
+    //     data.forEach(voucher => {
+    //         this.container.appendChild(this.getVouchers(voucher));
+    //     });
+    // }
+
     displayVouchers(data) {
         // console.log(data)
         this.container.innerHTML = ''; // Clear previous vouchers
         data.forEach(voucher => {
-            this.container.appendChild(this.getVouchers(voucher));
+            this.container.insertBefore(this.getVouchers(voucher), this.container.firstChild);
         });
     }
 
