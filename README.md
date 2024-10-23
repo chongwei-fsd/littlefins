@@ -30,7 +30,6 @@
 
 <li>Get the barcode random generate digit, voucher image, voucher desc, exp date &#9989;</li>
 <li>Unit testing for user, vouchers, redemption &#9989;</li>
-<li>Unit testing for admin (chong wei will do) &#10060;</li>
 
 <hr>
 
