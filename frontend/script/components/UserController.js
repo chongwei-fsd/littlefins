@@ -7,13 +7,13 @@ class UserController{
         // console.log(data)
         this.container.innerHTML=''
         // this.container.append(this.userProfile(data),this.piggyBankCoins(data),this.myActivity())
-        this.container.append(this.userProfile(data),this.piggyBankCoins(data),this.myActivity())
+        this.container.append(this.myActivity(),this.piggyBankCoins(data),this.userProfile(data))
     
     }
 
     userProfile(data){
         const div1=document.createElement("div")
-        div1.className="col-md-4 col-6"
+        div1.className="col-md-5 col-6"
 
         const div2=document.createElement("div")
         div2.className="d-md-flex d-flex flex-column align-items-center bg-white rounded-5 p-3 h-100"
@@ -78,7 +78,7 @@ class UserController{
 
     myActivity(){
         const div1=document.createElement("div")
-        div1.className="col-md-5 d-none d-sm-block"
+        div1.className="col-md-4 d-none d-sm-block"
 
         const div2=document.createElement("div")
         div2.className="d-md-flex d-flex flex-column align-items-center bg-white rounded-5 p-3 h-100"
