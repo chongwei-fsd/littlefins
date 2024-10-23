@@ -1,7 +1,4 @@
-<h2>Deploy to Azure &#10060;</h2>
 <h2>Frond end</h2>
-<li>Static pages (about, parents, partners) &#10060;</li>
-<li>Once user redeems the voucher, send an email &#10060;</li>
 <li>User end game at congra page, click sign in/signup, pass the balance coin to his account &#9989;</li>
 <li>Game pages' title &#9989;</li>
 <li>admin page (CRUD) &#9989;</li>
