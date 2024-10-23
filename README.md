@@ -1,3 +1,4 @@
+<img src="littlefins.gif">
 <h2>Frond end</h2>
 <li>User end game at congra page, click sign in/signup, pass the balance coin to his account &#9989;</li>
 <li>Game pages' title &#9989;</li>
